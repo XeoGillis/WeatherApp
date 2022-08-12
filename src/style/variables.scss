@@ -1,0 +1,64 @@
+// Primary Colours
+$primary-colour: #4b6dc2d0;
+$secondary-colour: #3c5699d0;
+$accent-colour: #00E7A1;
+
+
+// Special colours
+$background-colour: #1e2e3d;
+$background-accent: #273444;
+$header-background: #4b6dc2b0;
+$notification-background: #445d7c6b;
+$underlay: rgba(65, 73, 78, 0.534);
+$overlay: #ffffff36;
+// $overlay: transparent;
+
+// userBar animation
+$ub-offset: 70vw;
+
+// Shadow
+$shadow-2 : 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+0 17px 50px 0 rgba(0, 0, 0, 0.19);
+$shadow-1 : 0 8px 12px 0 rgba(0, 0, 0, 0.24),
+0 15px 30px 0 rgba(0, 0, 0, 0.19);
+$shadow-0 : 0 4px 8px 0 rgba(0, 0, 0, 0.24),
+0 10px 25px 0 rgba(0, 0, 0, 0.19);
+
+// Dark = dark-mode, Light = light-mode
+$blue-light: #007bff;
+$blue-dark: #0a84ff;
+
+$green-light: #34c759;
+$green-dark: #30d158;
+
+$indigo-light: #5856d6;
+$indigo-dark: #5e5ce6;
+
+$orange-light: #ff9500;
+$orange-dark: #ff9f0a;
+
+$pink-light: #ff2d55;
+$pink-dark: #ff375f;
+
+$purple-light: #af52de;
+$purple-dark: #bf5af2;
+
+$red-light: #ff3b30;
+$red-dark: #ff453a;
+
+$teal-light: #5ac8fa;
+$teal-dark: #64d2ff;
+
+$yellow-light: #ffcc00;
+$yellow-dark: #ffd60a;
+
+// Dark-mode colours
+$dark-2: #23272a;
+$dark-1: #2c2f33;
+$dark-0: #000;
+
+// Light-mode colours
+$light-3: #8f8f8f;
+$light-2: #bababa;
+$light-1: #E5E4E2;
+$light-0: #ffffff;
