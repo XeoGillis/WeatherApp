@@ -1,0 +1,18 @@
+@import '../../../style/variables.scss';
+
+.tempTile_component{
+  img{
+    height: 80px;
+    width: 80px;
+  }
+
+  .location{
+    font-size: 28px;
+  }
+
+
+  .high-low{
+    display: flex;
+    grid-gap: 10px;
+  }
+}

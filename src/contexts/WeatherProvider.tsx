@@ -1,29 +1,48 @@
 import React, { useCallback, useMemo, useState } from 'react'
+// Api
+import * as weatherAPI from '../api/_current';
 
-//TODO:
-import dataset from '../mockdata.json';
 
 // Context 
 export const WeatherContext = React.createContext<any>([]);
 
 export default function WeatherProvider(props: { children: any }) {
   // States
-  const [data, setData] = useState({});
+  const [data, setData] = useState(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  // const [location, setLocation]: any = useState(undefined);
 
-  //TODO: temporary 
+  // const getLocation = useCallback(async () => {
+  //   console.log('location');
+  //   if (navigator.geolocation) {
+  //     await navigator.geolocation.getCurrentPosition((location: any) => {
+  //       return [location.coords.latitude, location.coords.longitude];
+  //     });
+  //   } else {
+  //     return false;
+  //   }
+  // }, []);
+
   const getWeatherInfo = useCallback(async () => {
     try {
       setLoading(true);
       setError('');
-      setData(dataset);
+      // if (location === undefined) {
+      //   return;
+      // } else
+      //   if (!location) {
+      setData((await weatherAPI.getCurrentWeatherViaIp()).data);
+      // } else {
+      //   setData((await weatherAPI.getCurrentWeather(location)).data);
+      // }
     } catch (error: any) {
       setError(error);
     } finally {
       setLoading(false);
     }
   }, []);
+
 
 
   // Provider values

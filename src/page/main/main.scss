@@ -1,0 +1,23 @@
+@import '../../style/variables.scss';
+
+.main_page{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
+  grid-gap: 20px;
+}
+
+.tile{
+  width: 20vw;
+  height: 20vw;
+  backdrop-filter: blur(5px);
+  background-color: $tileBackground;
+  padding: 10px;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: $shadow_1;
+  align-items: center;
+  grid-gap: 2px;
+}

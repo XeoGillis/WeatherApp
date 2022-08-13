@@ -1,0 +1,12 @@
+@import '../../../style/variables.scss';
+
+.windTile_component{
+  .arrowContainer{
+    padding: 5px;
+
+    svg{
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

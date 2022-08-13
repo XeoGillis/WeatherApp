@@ -1,3 +1,5 @@
 {
-  "api_base_url": ""
+  "api_base_url": "https://api.weatherapi.com/v1",
+  "api_key": "58810cfc30f14868bc393455221308",
+  "min_loading": "250"
 }
