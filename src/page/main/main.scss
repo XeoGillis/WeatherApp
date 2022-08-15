@@ -1,9 +1,10 @@
 @import '../../style/variables.scss';
 
-.main_page{
-  display: grid;
-  grid-template-columns: 15vw 15vw 15vw 15vw;
-  justify-items: center;
+.main_page{  
+    display: grid;
+    grid-template-columns: repeat(4, 15vw);
+    justify-items: center;
+    row-gap: 40px;
 }
 
 .tile{
@@ -14,20 +15,34 @@
   backdrop-filter: blur(5px);
   background-color: $tileBackground;
   padding: 10px;  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   border-radius: 5px;
   box-shadow: $shadow_1;
   align-items: center;
-  margin-bottom: 50px;
+
+  &:nth-of-type(1){
+    .container{
+      margin-top: 0px;
+    }
+  }
+  
+  .container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+  }
+  
+
 }
 
 .tile:first-of-type{
   justify-self:flex-start;
 }
 
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 1400px){
   .main_page{
     grid-template-columns: 33vw 33vw 33vw;
   }
@@ -41,7 +56,8 @@
 
 @media only screen and (max-width: 450px){
   .main_page{
-    grid-template-columns: 47.5vw 47.5vw;
+    grid-template-columns: 45vw 45vw;
+    row-gap: 20px;
 
     .tile{
       min-width: 150px;

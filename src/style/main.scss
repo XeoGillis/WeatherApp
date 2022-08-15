@@ -22,12 +22,18 @@ body {
 }
 
 main{
+  padding-top: 100px;
   margin: 0 5vw;
 }
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 1400px){
   main{
     margin: 0 20vw;
   }
 } 
 
+@media only screen and (max-width: 450px){
+h1{
+  font-size: 20px;
+}
+}

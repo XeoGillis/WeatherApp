@@ -16,3 +16,15 @@
     grid-gap: 10px;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .tempTile_component{
+    grid-column: span 2;
+    width: 100%;
+
+    .container{
+      // background-color: beige;
+      width: 100%;
+    }
+  }
+}

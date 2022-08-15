@@ -2,7 +2,6 @@ import React, { useCallback, useMemo, useState } from 'react'
 // Api
 import * as weatherAPI from '../api/_current';
 
-
 // Context 
 export const WeatherContext = React.createContext<any>([]);
 
@@ -11,44 +10,42 @@ export default function WeatherProvider(props: { children: any }) {
   const [data, setData] = useState(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  // const [location, setLocation]: any = useState(undefined);
-
-  // const getLocation = useCallback(async () => {
-  //   console.log('location');
-  //   if (navigator.geolocation) {
-  //     await navigator.geolocation.getCurrentPosition((location: any) => {
-  //       return [location.coords.latitude, location.coords.longitude];
-  //     });
-  //   } else {
-  //     return false;
-  //   }
-  // }, []);
+  // Options
+  const [system, setSystem] = useState(localStorage.getItem('system') ? localStorage.getItem('system') : 'metric');
+  const [language, setLanguage] = useState(localStorage.getItem('lang') ? localStorage.getItem('lang') : 'nl');
 
   const getWeatherInfo = useCallback(async () => {
     try {
       setLoading(true);
       setError('');
-      // if (location === undefined) {
-      //   return;
-      // } else
-      //   if (!location) {
-      setData((await weatherAPI.getCurrentWeatherViaIp()).data);
-      // } else {
-      //   setData((await weatherAPI.getCurrentWeather(location)).data);
-      // }
+      if (language === '') {
+        setData((await weatherAPI.getCurrentWeatherViaIp()).data);
+      } else {
+        setData((await weatherAPI.getCurrentWeatherViaIpDutch()).data);
+      }
     } catch (error: any) {
       setError(error);
     } finally {
       setLoading(false);
     }
+  }, [language]);
+
+  // Changes the language of the app
+  const changeLang = useCallback((value: string) => {
+    setLanguage(value);
+    localStorage.setItem('lang', value);
   }, []);
 
-
+  // Changes the usage of the metric or imperial system
+  const changeSystem = useCallback((value: string) => {
+    setSystem(value);
+    localStorage.setItem('system', value);
+  }, []);
 
   // Provider values
   const values = useMemo(() => ({
-    data, loading, error, getWeatherInfo
-  }), [data, error, getWeatherInfo, loading]);
+    data, loading, error, getWeatherInfo, language, changeLang, system, changeSystem
+  }), [changeLang, changeSystem, data, error, getWeatherInfo, language, loading, system]);
 
   return (
     <WeatherContext.Provider value={values}>
