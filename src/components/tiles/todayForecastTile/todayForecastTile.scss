@@ -20,6 +20,8 @@
     grid-gap: 10px;
     overflow-x: scroll;
     margin: 0 100px;
+    height: fit-content;
+    align-self: center;
 
     .forecast-item{
       display: flex;
