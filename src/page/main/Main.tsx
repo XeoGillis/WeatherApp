@@ -9,6 +9,10 @@ import UvTile from '../../components/tiles/uvTile/UvTile';
 import PressureTile from '../../components/tiles/pressureTile/PressureTile';
 import HumidityTile from '../../components/tiles/humidityTile/HumidityTile';
 import VisibilityTile from '../../components/tiles/visibilityTile/VisibilityTile';
+import Navbar from '../../components/navbar/Navbar';
+import PrecipitationTile from '../../components/tiles/precipitationTile/PrecipitationTile';
+import FeelsLikeTile from '../../components/tiles/feelsLikeTile/FeelsLikeTile';
+import TodayForecastTile from '../../components/tiles/todayForecastTile/TodayForecastTile';
 
 export default function Main() {
   const [minLoading, setMinLoading] = useState(true);
@@ -25,34 +29,48 @@ export default function Main() {
   }, parseInt(config.min_loading));
 
   return (
-    <main className='main_page'>
-      {(!loading && !minLoading) &&
-        <>
-          <TempTile
-            data={data}
-          />
-          <WindTile
-            data={data}
-          />
-          <UvTile
-            data={data}
-          />
-          <PressureTile
-            data={data}
-          />
-          <HumidityTile
-            data={data}
-          />
-          <VisibilityTile
-            data={data}
-          />
-        </>
 
-      }
+    <>
+      <Navbar />
+      <main className='main_page'>
+        {(!loading && !minLoading) &&
+          <>
+            <TempTile
+              data={data}
+            />
+            <TodayForecastTile
+              data={data}
+            />
 
-      {(loading || minLoading) &&
-        <Spinner />
-      }
-    </main>
+            <WindTile
+              data={data}
+            />
+            <UvTile
+              data={data}
+            />
+            <PressureTile
+              data={data}
+            />
+            <HumidityTile
+              data={data}
+            />
+            <VisibilityTile
+              data={data}
+            />
+            <PrecipitationTile
+              data={data}
+            />
+            <FeelsLikeTile
+              data={data}
+            />
+          </>
+
+        }
+
+        {(loading || minLoading) &&
+          <Spinner />
+        }
+      </main>
+    </>
   )
 }

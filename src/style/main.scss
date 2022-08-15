@@ -19,16 +19,15 @@ a {
 body {
   background-color: $background-colour;
   overflow-x: hidden;
+}
+
+main{
   margin: 0 5vw;
 }
 
-@media only screen and (display-mode:standalone) {
-  body {
-    min-height: calc(100vh - 100px);
-    max-width: 100vw;
-
-    a, button, div{
-      -webkit-tap-highlight-color: transparent;
-    }
+@media only screen and (min-width: 1000px){
+  main{
+    margin: 0 20vw;
   }
-}
+} 
+

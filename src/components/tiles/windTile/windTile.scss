@@ -1,6 +1,11 @@
 @import '../../../style/variables.scss';
 
 .windTile_component{
+  h1{
+    align-self: start;
+    justify-self: start;
+  }
+
   .arrowContainer{
     padding: 5px;
 

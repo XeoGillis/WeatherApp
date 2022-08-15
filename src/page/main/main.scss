@@ -1,15 +1,16 @@
 @import '../../style/variables.scss';
 
 .main_page{
-  margin-top: 20px;
   display: grid;
-  grid-template-columns: 20vw 20vw 20vw 20vw;
-  grid-gap: 20px;
+  grid-template-columns: 15vw 15vw 15vw 15vw;
+  justify-items: center;
 }
 
 .tile{
-  width: 20vw;
-  height: 20vw;
+  min-width: 200px;
+  min-height: 200px;
+  width: 13vw;
+  height: 13vw;
   backdrop-filter: blur(5px);
   background-color: $tileBackground;
   padding: 10px;  
@@ -19,5 +20,32 @@
   border-radius: 5px;
   box-shadow: $shadow_1;
   align-items: center;
-  grid-gap: 2px;
+  margin-bottom: 50px;
+}
+
+.tile:first-of-type{
+  justify-self:flex-start;
+}
+
+@media only screen and (max-width: 1000px){
+  .main_page{
+    grid-template-columns: 33vw 33vw 33vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main_page{
+    grid-template-columns: 30vw 30vw 30vw;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .main_page{
+    grid-template-columns: 47.5vw 47.5vw;
+
+    .tile{
+      min-width: 150px;
+      min-height: 150px;
+    }
+  }
 }
