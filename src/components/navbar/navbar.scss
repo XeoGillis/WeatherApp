@@ -14,5 +14,19 @@
   display: flex;
   flex-direction:  row;
   justify-content: space-between;
+  align-items: center;
   padding: 0 40px;
+
+
+  .icon{
+    font-size: 35px;
+    color: $teal-dark;
+  }
+
+  .buttons{
+    a{
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
 }
