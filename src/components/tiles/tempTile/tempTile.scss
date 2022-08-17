@@ -1,25 +1,25 @@
 @import '../../../style/variables.scss';
 
 .tempTile_component{
+
   img{
     height: 80px;
     width: 80px;
   }
 
-  .location{
-    font-size: 28px;
-  }
-
-
   .high-low{
     display: flex;
     grid-gap: 10px;
   }
-}
 
-@media only screen and (max-width: 450px) {
-  .tempTile_component{
-    grid-column: span 2;
-    width: 100%;
+  .container{
+    display: grid;
   }
 }
+
+@media only screen and (max-width: 690px) {
+  .tempTile_component{
+    grid-column: span 2;
+
+  }
+} 

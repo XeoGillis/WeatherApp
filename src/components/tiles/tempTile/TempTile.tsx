@@ -8,8 +8,8 @@ export default function TempTile(props: { data: any, system: string }) {
       {props.data !== undefined &&
         <>
           <section className="tempTile_component tile">
+            <h1>{props.data.location.name}</h1>
             <div className="container">
-              <div className="location">{props.data.location.name}</div>
               <img src={props.data.current.condition.icon} alt="" />
               {props.system === 'metric' &&
                 <div className="temp">{props.data.current.temp_c} °C</div>

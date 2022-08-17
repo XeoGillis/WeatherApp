@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 
-export default function Forecast() {
+export default function Week() {
   return (
     <>
       <Navbar />

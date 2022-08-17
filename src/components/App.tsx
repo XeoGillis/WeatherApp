@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import WeatherProvider from '../contexts/WeatherProvider';
-import Forecast from '../page/forecast/Forecast';
 import Main from '../page/main/Main';
+import Week from '../page/week/Week';
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
         <Route index element={
           <Main />
         } />
-        <Route path='/forecast' element={
-          <Forecast />
+        <Route path='/week' element={
+          <Week />
         } />
       </Routes>
     </WeatherProvider>
