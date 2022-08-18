@@ -19,7 +19,6 @@ export default function Main() {
   const [minLoading, setMinLoading] = useState(true);
   const { data, loading, error, getWeatherInfo, system } = useContext(WeatherContext);
 
-
   useEffect(() => {
     getWeatherInfo();
   }, [getWeatherInfo]);

@@ -1,22 +1,46 @@
-# Weather app
+# Getting Started with Create React App
 
-This project is an opensource weather app, developed by Xeo Gillis and Jonas Bostoen. The goal of this project was to create a simple react app using a third party api and prepare ourselves better for upcoming heatwaves and other extreme weather. 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## How to use
-If you want to host this app yourself. You firstly will have to get an api key from the weather api service we used https://www.weatherapi.com/. Once you got an api key, you will have to download all files in this repository and have node.js installed. The next step is to go into the src folder of the project and find the config.json file. Here you will want to paste your api key.
+## Available Scripts
 
+In the project directory, you can run:
 
-```json
-{
-  "api_base_url": "https://api.weatherapi.com/v1",
-  "api_key": "paste_your_api_key",
-  "min_loading": "250"
-}
-```
+### `npm start`
 
-The last step is to build the app using the command `yarn build`  in the terminal.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Now you are the proud owner of the static files of the app, these can be put on a web server to be viewed from. 
+### `npm test`
 
-This project is 100% open source, but we are not responsible for any illegal usage of this software or failures and bugs this software may cause. 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).

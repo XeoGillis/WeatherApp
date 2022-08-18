@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react'
-// Api
+// Apis
 import * as weatherAPI from '../api/_current';
+import * as forecastAPI from '../api/_forecast';
 
 // Context 
 export const WeatherContext = React.createContext<any>([]);
@@ -8,6 +9,7 @@ export const WeatherContext = React.createContext<any>([]);
 export default function WeatherProvider(props: { children: any }) {
   // States
   const [data, setData] = useState(undefined);
+  const [forecastData, setForecastData] = useState(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   // Options
@@ -25,6 +27,18 @@ export default function WeatherProvider(props: { children: any }) {
     }
   }, []);
 
+  const getWeatherForecast = useCallback(async (days: number) => {
+    try {
+      setLoading(true);
+      setError('');
+      setForecastData((await forecastAPI.getForecastViaIp(days)).data);
+    } catch (error: any) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
   // Changes the usage of the metric or imperial system
   const changeSystem = useCallback((value: string) => {
     setSystem(value);
@@ -33,8 +47,8 @@ export default function WeatherProvider(props: { children: any }) {
 
   // Provider values
   const values = useMemo(() => ({
-    data, loading, error, getWeatherInfo, system, changeSystem
-  }), [changeSystem, data, error, getWeatherInfo, loading, system]);
+    data, loading, error, getWeatherInfo, system, changeSystem, getWeatherForecast, forecastData
+  }), [data, loading, error, getWeatherInfo, system, changeSystem, getWeatherForecast, forecastData]);
 
   return (
     <WeatherContext.Provider value={values}>

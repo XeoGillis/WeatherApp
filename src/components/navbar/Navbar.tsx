@@ -20,7 +20,7 @@ export default function Navbar() {
 
       <div className="buttons">
         <Link to='/' >Today</Link>
-        {/* <Link to='/week' >Week</Link> */}
+        <Link to='/week' >Week</Link>
       </div>
 
       <div className="options">
