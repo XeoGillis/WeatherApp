@@ -1,0 +1,97 @@
+@import '../../style/variables.scss';
+
+.forecastItem_component{
+  display: grid;
+  grid-template-columns: 150px 100px 1fr;
+  align-items: center;
+  border-bottom: 2px solid $tileBackground;
+  padding: 10px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+
+  .day{
+    font-size: 24px;
+  }
+
+  .image-precipitation{
+    img{
+      height: 64px;
+      width: 64px;
+    }
+
+    div{
+      text-align: center;
+      margin-top: -20px;
+      margin-left: 20px;
+      color: $teal-dark;
+    }
+  }
+
+  .temperature{
+    justify-self: flex-end;
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+
+    .min{
+     color: $teal-dark;
+     margin-right: 10px;
+    }
+
+    .max{
+      color: $orange-dark;
+      margin-left: 10px;
+    }
+
+    .indicator{
+      width: 150px;
+      height: 7px;
+      padding: 1px;
+      background: linear-gradient(0.25turn, $teal-dark, #ebf8e1, $orange-dark);
+      border-radius: 10px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 690px){
+  .forecastItem_component{
+    grid-template-columns: 90px 80px 1fr;
+  
+    .day{
+      font-size: 18px;
+    }
+  
+
+    .image-precipitation{
+      img{
+        height: 50px;
+        width: 50px;
+      }
+
+      div{
+        font-size: 14px;
+      }
+    }
+
+
+    .temperature{
+      font-size: 14px;
+      padding-right: 0px;
+
+      .min{
+       color: $teal-dark;
+       margin-right: 5px;
+      }
+  
+      .max{
+        color: $orange-dark;
+        margin-left: 5px;
+      }
+  
+      .indicator{
+        width: 60px;
+      }
+    }
+  }
+}

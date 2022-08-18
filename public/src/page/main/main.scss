@@ -1,0 +1,70 @@
+@import '../../style/variables.scss';
+
+.main_page{  
+    display: grid;
+    grid-template-columns: repeat(4, 15vw);
+    justify-items: center;
+    row-gap: 40px;
+}
+
+.tile{
+  min-width: 200px;
+  min-height: 200px;
+  width: 13vw;
+  height: 13vw;
+  backdrop-filter: blur(5px);
+  background-color: $tileBackground;
+  padding: 10px;  
+  border-radius: 5px;
+  box-shadow: $shadow_1;
+  align-items: center;
+
+
+  
+  .container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+  }
+  
+
+}
+
+@media only screen and (min-width: 690px) {
+  .tile:first-of-type{
+    justify-self:flex-start;
+  }
+}
+
+@media only screen and (max-width: 1400px){
+  .main_page{
+    grid-template-columns: repeat(3, 30vw);
+
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main_page{
+    grid-template-columns: 30vw 30vw 30vw;
+  }
+}
+
+@media only screen and (max-width: 690px){
+  .main_page{
+    grid-template-columns: 45vw 45vw;
+    row-gap: 20px;
+
+    .tile{
+      min-width: 150px;
+      min-height: 150px;
+    
+      &:first-of-type{
+        width: 100%;
+      }
+    }
+  }
+}
