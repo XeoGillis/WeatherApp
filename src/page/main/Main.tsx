@@ -14,10 +14,16 @@ import PrecipitationTile from '../../components/tiles/precipitationTile/Precipit
 import FeelsLikeTile from '../../components/tiles/feelsLikeTile/FeelsLikeTile';
 import TodayForecastTile from '../../components/tiles/todayForecastTile/TodayForecastTile';
 import SunsetTile from '../../components/tiles/sunsetTile/SunsetTile';
+import { useNotification } from '../../hooks/useNotification';
+import Notification from '../../components/util/notification/Notification';
 
 export default function Main() {
   const [minLoading, setMinLoading] = useState(true);
   const { data, loading, error, getWeatherInfo, system } = useContext(WeatherContext);
+<<<<<<< HEAD
+=======
+  const { triggerNotification, payload } = useNotification(true);
+>>>>>>> bf2c84d (updated readme and added error handling)
 
   useEffect(() => {
     getWeatherInfo();
@@ -28,55 +34,67 @@ export default function Main() {
     setMinLoading(false);
   }, parseInt(config.min_loading));
 
+  console.log(error.message);
+
+  useEffect(() => {
+    if (error === undefined) return;
+    triggerNotification(error.message, 0);
+  }, [error, triggerNotification]);
+
   return (
 
     <>
       <Navbar />
+      <Notification {...payload} />
       <main className='main_page'>
-        {(!loading && !minLoading) &&
+        {(!error) &&
           <>
-            <TempTile
-              data={data}
-              system={system}
-            />
-            <TodayForecastTile
-              data={data}
-              system={system}
-            />
-            <WindTile
-              data={data}
-              system={system}
-            />
-            <SunsetTile
-              data={data}
-            />
-            <UvTile
-              data={data}
-            />
-            <PressureTile
-              data={data}
-            />
-            <HumidityTile
-              data={data}
-            />
-            <VisibilityTile
-              data={data}
-              system={system}
-            />
-            <PrecipitationTile
-              data={data}
-              system={system}
-            />
-            <FeelsLikeTile
-              data={data}
-              system={system}
-            />
+            {(!loading && !minLoading) &&
+              <>
+                <TempTile
+                  data={data}
+                  system={system}
+                />
+                <TodayForecastTile
+                  data={data}
+                  system={system}
+                />
+                <WindTile
+                  data={data}
+                  system={system}
+                />
+                <SunsetTile
+                  data={data}
+                />
+                <UvTile
+                  data={data}
+                />
+                <PressureTile
+                  data={data}
+                />
+                <HumidityTile
+                  data={data}
+                />
+                <VisibilityTile
+                  data={data}
+                  system={system}
+                />
+                <PrecipitationTile
+                  data={data}
+                  system={system}
+                />
+                <FeelsLikeTile
+                  data={data}
+                  system={system}
+                />
+              </>
+
+            }
+
+            {(loading || minLoading) &&
+              <Spinner />
+            }
           </>
-
-        }
-
-        {(loading || minLoading) &&
-          <Spinner />
         }
       </main>
     </>

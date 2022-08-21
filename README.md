@@ -1,22 +1,86 @@
-# Weather app
-
-This project is an opensource weather app, developed by Xeo Gillis and Jonas Bostoen. The goal of this project was to create a simple react app using a third party api and prepare ourselves better for upcoming heatwaves and other extreme weather. 
-
-## How to use
-If you want to host this app yourself. You firstly will have to get an api key from the weather api service we used https://www.weatherapi.com/. Once you got an api key, you will have to download all files in this repository and have node.js installed. The next step is to go into the src folder of the project and find the config.json file. Here you will want to paste your api key.
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url-jonas]
+[![LinkedIn][linkedin-shield]][linkedin-url-xeo]
 
 
-```json
-{
-  "api_base_url": "https://api.weatherapi.com/v1",
-  "api_key": "paste_your_api_key",
-  "min_loading": "250"
-}
-```
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-The last step is to build the app using the command `yarn build`  in the terminal.
+This project is an opensource weather app, developed by Xeo Gillis and Jonas Bostoen. The goal of this project was to create a simple react app using a third party api and prepare ourselves better for upcoming heatwaves and other extreme weather.
 
 
-Now you are the proud owner of the static files of the app, these can be put on a web server to be viewed from. 
+## Built With
+
 
 This project is 100% open source, but we are not responsible for any illegal usage of this software or failures and bugs this software may cause. 
+
+[![React][React.js]][React-url]
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+The following steps below will explain how to get this app running yourself.
+
+### Prerequisites
+
+This app makes use of node.js and yarn to run. So make sure you have node installed.
+* yarn
+  ```sh
+  npm install --global yarn
+  ```
+
+### Installation
+
+1. Get a free API Key at [https://www.weatherapi.com/](https://www.weatherapi.com/)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/XeoGillis/WeatherApp.git
+   ```
+3. Install NPM packages
+   ```sh
+   yarn install
+   ```
+4. Enter your API in `config.js`
+   ```json
+   "api_key" = 'paste_your_api_key';
+   ```
+5. Build the app into static files
+   ```sh
+    yarn build
+   ```
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+After following the previous steps, you are now the proud owner of the static files of the app. You can upload these to a webserver and enjoy the weather app.
+
+
+<!-- LICENSE -->
+## License
+
+This project is 100% open source, but we are not responsible for any illegal usage of this software or failures and bugs this software may cause.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [Choose an Open Source License](https://choosealicense.com)
+* [Img Shields](https://shields.io)
+* [GitHub Pages](https://pages.github.com)
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.
+[linkedin-url-jonas]: https://www.linkedin.com/in/jonas-bostoen-0322b1223/
+[linkedin-url-xeo]: https://www.linkedin.com/in/xeo-gillis-b729b8222/
+

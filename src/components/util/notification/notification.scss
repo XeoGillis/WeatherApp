@@ -1,0 +1,163 @@
+@import '../../../style/variables.scss';
+
+.-cancelable {
+  border-radius: 5px 0 5px 5px !important;
+}
+
+.notification {
+  position: fixed;
+  margin: 0 2vw 0 0;
+  top: 80px;
+  max-width: 40vw;
+  right: 0;
+  transition: 0.5s;
+  color: $light-1;
+  border-radius: 5px;
+  box-shadow: $shadow-0;
+  background-color: $notification-background;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+
+
+  .content {
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+      "icon cancelItem"
+      "icon text";
+
+    .timer {
+      grid-area: cancelItem;
+      animation: progressBar 4s linear;
+      border-radius: 3px;
+      opacity: 0.8;
+      margin: 6px 0 5px 5px;
+      width: 95%;
+      padding: 2px;
+    }
+
+    .icon-section {
+      display: flex;
+      border-radius: 5px 0 0 5px;
+      height: 100%;
+      grid-area: icon;
+      padding: 5px;
+
+      svg {
+        color: $light-0;
+        align-self: center;
+        height: 30px;
+      }
+    }
+
+    .message {
+      grid-area: text;
+      font-size: 18px;
+      margin: 0 10px 0 3px;
+      grid-row: 2/3;
+      padding: 0 3px 10px 3px;
+    }
+
+    .-no-timer {
+      margin: 13px 10px 0 3px;
+    }
+  }
+
+  .exit-container {
+    display: flex;
+    justify-content: flex-end;
+
+    .exit-button {
+      font-size: 22px;
+      right: 0;
+      margin-right: -15px;
+      margin-top: -15px;
+      color: $red-dark;
+      padding: 3px;
+      height: 0px;
+
+      svg {
+        padding: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes progressBar {
+  10% {
+    width: 0%;
+    opacity: 0.2;
+  }
+
+  90% {
+    width: 95%;
+    opacity: 0.8;
+  }
+}
+
+.-error {
+  .content {
+    .timer {
+      background-color: $red-dark;
+    }
+
+    .icon-section {
+      background-color: $red-dark;
+    }
+  }
+}
+
+.-warning {
+  .content {
+    .timer {
+      background-color: $orange-dark;
+    }
+
+    .icon-section {
+      background-color: $orange-dark
+    }
+  }
+}
+
+.-success {
+  .content {
+    .timer {
+      background-color: $green-dark;
+    }
+
+    .icon-section {
+      background-color: $green-dark;
+    }
+  }
+}
+
+.note-enter {
+  right: -100vw;
+}
+
+.note-exit {
+  right: -100vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .notification {
+    top: 80px;
+    max-width: 80vw;
+
+    .content {
+      .icon-section {
+        svg {
+          height: 20px;
+        }
+      }
+
+      .message {
+        font-size: 14px;
+      }
+    }
+  }
+}
