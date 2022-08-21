@@ -80,7 +80,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [React-url]: https://reactjs.org/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.
+[license-url]: https://github.com/XeoGillis/WeatherApp/blob/main/LICENSE.
 [linkedin-url-jonas]: https://www.linkedin.com/in/jonas-bostoen-0322b1223/
 [linkedin-url-xeo]: https://www.linkedin.com/in/xeo-gillis-b729b8222/
 
