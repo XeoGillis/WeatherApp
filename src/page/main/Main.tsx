@@ -20,10 +20,7 @@ import Notification from '../../components/util/notification/Notification';
 export default function Main() {
   const [minLoading, setMinLoading] = useState(true);
   const { data, loading, error, getWeatherInfo, system } = useContext(WeatherContext);
-<<<<<<< HEAD
-=======
   const { triggerNotification, payload } = useNotification(true);
->>>>>>> bf2c84d (updated readme and added error handling)
 
   useEffect(() => {
     getWeatherInfo();
@@ -34,10 +31,8 @@ export default function Main() {
     setMinLoading(false);
   }, parseInt(config.min_loading));
 
-  console.log(error.message);
-
   useEffect(() => {
-    if (error === undefined) return;
+    if (error === undefined || error === '') return;
     triggerNotification(error.message, 0);
   }, [error, triggerNotification]);
 
