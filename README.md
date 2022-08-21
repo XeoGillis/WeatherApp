@@ -41,7 +41,7 @@ This app makes use of node.js and yarn to run. So make sure you have node instal
    ```sh
    yarn install
    ```
-4. Enter your API in `config.js`
+4. Enter your API in `config.json`
    ```json
    "api_key" = "paste_your_api_key"
    ```
