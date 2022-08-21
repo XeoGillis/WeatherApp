@@ -43,7 +43,7 @@ This app makes use of node.js and yarn to run. So make sure you have node instal
    ```
 4. Enter your API in `config.json`
    ```json
-   "api_key" = "paste_your_api_key"
+   "api_key" : "paste_your_api_key"
    ```
 5. Build the app into static files
    ```sh
