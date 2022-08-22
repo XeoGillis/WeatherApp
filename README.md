@@ -6,13 +6,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is an opensource weather app, developed by Xeo Gillis and Jonas Bostoen. The goal of this project was to create a simple react app using a third party api and prepare ourselves better for upcoming heatwaves and other extreme weather.
+This project is an opensource weather app, developed by Xeo Gillis and Jonas Bostoen. The goal of this project was to create a simple react app using a third party api aswell as having our own weather app that can be access on any browser.
 
 
 ## Built With
-
-
-This project is 100% open source, but we are not responsible for any illegal usage of this software or failures and bugs this software may cause. 
 
 [![React][React.js]][React-url]
 
@@ -20,7 +17,7 @@ This project is 100% open source, but we are not responsible for any illegal usa
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The following steps below will explain how to get this app running yourself.
+The following steps below will explain how to get this app up and running yourself.
 
 ### Prerequisites
 
@@ -54,14 +51,14 @@ This app makes use of node.js and yarn to run. So make sure you have node instal
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-After following the previous steps, you are now the proud owner of the static files of the app. You can upload these to a webserver and enjoy the weather app.
+After following the previous steps, you are now the proud owner of the static files of the app. You can upload these to a webserver and enjoy your own self hosted weather app.
 
 
 <!-- LICENSE -->
 ## License
 
 This project is 100% open source, but we are not responsible for any illegal usage of this software or failures and bugs this software may cause.
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- ACKNOWLEDGMENTS -->
