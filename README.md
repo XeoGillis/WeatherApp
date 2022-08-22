@@ -53,6 +53,12 @@ This app makes use of node.js and yarn to run. So make sure you have node instal
 
 After following the previous steps, you are now the proud owner of the static files of the app. You can upload these to a webserver and enjoy your own self hosted weather app.
 
+## Roadmap
+- [ ] Full PWA support 
+- [ ] Better tiles and icons 
+- [ ] light and dark mode depending on time of day
+
+
 
 <!-- LICENSE -->
 ## License
